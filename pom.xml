@@ -46,6 +46,8 @@
     <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
     <spring-cloud.version>2022.0.0</spring-cloud.version>
 
+    <jackson.version>2.16.1</jackson.version>
+
   </properties>
 
   <!-- 统一依赖管理 -->
@@ -90,6 +92,19 @@
         <groupId>com.quanxiaoha</groupId>
         <artifactId>xiaoha-common</artifactId>
         <version>${revision}</version>
+      </dependency>
+
+      <!-- Jackson -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.version}</version>
       </dependency>
 
     </dependencies>
