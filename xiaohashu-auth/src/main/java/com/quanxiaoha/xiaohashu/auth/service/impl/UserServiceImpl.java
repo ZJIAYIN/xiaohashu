@@ -19,12 +19,14 @@ import com.quanxiaoha.xiaohashu.auth.enums.LoginTypeEnum;
 import com.quanxiaoha.xiaohashu.auth.enums.ResponseCodeEnum;
 import com.quanxiaoha.xiaohashu.auth.model.vo.user.UserLoginReqVO;
 import com.quanxiaoha.xiaohashu.auth.service.UserService;
+import io.micrometer.common.util.StringUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -46,6 +48,9 @@ public class UserServiceImpl implements UserService {
     @Resource
     private RedisTemplate redisTemplate;
 
+    @Resource
+    private TransactionTemplate transactionTemplate;
+
     /**
      * 登录与注册
      * @param userLoginReqVO
@@ -58,16 +63,22 @@ public class UserServiceImpl implements UserService {
         Integer type = userLoginReqVO.getType();
         LoginTypeEnum loginTypeEnum = LoginTypeEnum.valueOf(type);
 
+        //获取手机号
+        String phone = userLoginReqVO.getPhone();
+        //获取验证码
+        String code = userLoginReqVO.getCode();
+
         Long userId = null;
 
         switch (loginTypeEnum) {
 
             //手机号登录
             case VERIFICATION_CODE:
-            //获取手机号
-            String phone = userLoginReqVO.getPhone();
-            //获取验证码
-            String code = userLoginReqVO.getCode();
+
+                // 校验入参验证码是否为空
+                if (StringUtils.isBlank(code)) {
+                    return Response.fail(ResponseCodeEnum.PARAM_NOT_VALID.getErrorCode(), "验证码不能为空");
+                }
 
             //判断验证码是否正确
             String key = RedisKeyConstants.buildVerificationCodeKey(phone);
@@ -96,6 +107,11 @@ public class UserServiceImpl implements UserService {
             else{
                 //ZJY TODO 2025/10/13:未注册
                 // 若此用户还没有注册，系统自动注册该用户
+                /**
+                 * userId = registerUser(phone);
+                 * 自调用会导致事务失效！！！
+                 */
+
                 userId = registerUser(phone);
             };
 
@@ -125,44 +141,95 @@ public class UserServiceImpl implements UserService {
      * @param phone
      * @return
      */
-    @Transactional(rollbackFor = Exception.class)
-    public Long registerUser(String phone) {
-        // 获取全局自增的小哈书 ID
-        Long xiaohashuId = redisTemplate.opsForValue().increment(RedisKeyConstants.XIAOHASHU_ID_GENERATOR_KEY);
 
-        UserDO userDO = UserDO.builder()
-                .phone(phone)
-                .xiaohashuId(String.valueOf(xiaohashuId)) // 自动生成小红书号 ID
-                .nickname("小红薯" + xiaohashuId) // 自动生成昵称, 如：小红薯10000
-                .status(StatusEnum.ENABLE.getValue()) // 状态为启用
-                .createTime(LocalDateTime.now())
-                .updateTime(LocalDateTime.now())
-                .isDeleted(DeletedEnum.NO.getValue()) // 逻辑删除
-                .build();
+    //声明式事务
+//    @Transactional(rollbackFor = Exception.class)
+//    public Long registerUser(String phone) {
+//        // 获取全局自增的小哈书 ID
+//        Long xiaohashuId = redisTemplate.opsForValue().increment(RedisKeyConstants.XIAOHASHU_ID_GENERATOR_KEY);
+//
+//        UserDO userDO = UserDO.builder()
+//                .phone(phone)
+//                .xiaohashuId(String.valueOf(xiaohashuId)) // 自动生成小红书号 ID
+//                .nickname("小红薯" + xiaohashuId) // 自动生成昵称, 如：小红薯10000
+//                .status(StatusEnum.ENABLE.getValue()) // 状态为启用
+//                .createTime(LocalDateTime.now())
+//                .updateTime(LocalDateTime.now())
+//                .isDeleted(DeletedEnum.NO.getValue()) // 逻辑删除
+//                .build();
+//
+//        // 添加入库
+//        userDOMapper.insert(userDO);
+//
+//        // 获取刚刚添加入库的用户 ID
+//        Long userId = userDO.getId();
+//
+//        // 给该用户分配一个默认角色
+//        UserRoleDO userRoleDO = UserRoleDO.builder()
+//                .userId(userId)
+//                .roleId(RoleConstants.COMMON_USER_ROLE_ID)
+//                .createTime(LocalDateTime.now())
+//                .updateTime(LocalDateTime.now())
+//                .isDeleted(DeletedEnum.NO.getValue())
+//                .build();
+//        userRoleDOMapper.insert(userRoleDO);
+//
+//        // 将该用户的角色 ID 存入 Redis 中
+//        List<Long> roles = Lists.newArrayList();
+//        roles.add(RoleConstants.COMMON_USER_ROLE_ID);
+//        String userRolesKey = RedisKeyConstants.buildUserRoleKey(phone);
+//        redisTemplate.opsForValue().set(userRolesKey, JsonUtils.toJsonString(roles));
+//
+//        return userId;
+//    }
 
-        // 添加入库
-        userDOMapper.insert(userDO);
+    private Long registerUser(String phone) {
 
-        // 获取刚刚添加入库的用户 ID
-        Long userId = userDO.getId();
+        return transactionTemplate.execute(status -> {
+            try {
+                // 获取全局自增的小哈书 ID
+                Long xiaohashuId = redisTemplate.opsForValue().increment(RedisKeyConstants.XIAOHASHU_ID_GENERATOR_KEY);
 
-        // 给该用户分配一个默认角色
-        UserRoleDO userRoleDO = UserRoleDO.builder()
-                .userId(userId)
-                .roleId(RoleConstants.COMMON_USER_ROLE_ID)
-                .createTime(LocalDateTime.now())
-                .updateTime(LocalDateTime.now())
-                .isDeleted(DeletedEnum.NO.getValue())
-                .build();
-        userRoleDOMapper.insert(userRoleDO);
+                UserDO userDO = UserDO.builder()
+                        .phone(phone)
+                        .xiaohashuId(String.valueOf(xiaohashuId)) // 自动生成小红书号 ID
+                        .nickname("小红薯" + xiaohashuId) // 自动生成昵称, 如：小红薯10000
+                        .status(StatusEnum.ENABLE.getValue()) // 状态为启用
+                        .createTime(LocalDateTime.now())
+                        .updateTime(LocalDateTime.now())
+                        .isDeleted(DeletedEnum.NO.getValue()) // 逻辑删除
+                        .build();
 
-        // 将该用户的角色 ID 存入 Redis 中
-        List<Long> roles = Lists.newArrayList();
-        roles.add(RoleConstants.COMMON_USER_ROLE_ID);
-        String userRolesKey = RedisKeyConstants.buildUserRoleKey(phone);
-        redisTemplate.opsForValue().set(userRolesKey, JsonUtils.toJsonString(roles));
+                // 添加入库
+                userDOMapper.insert(userDO);
 
-        return userId;
+
+                // 获取刚刚添加入库的用户 ID
+                Long userId = userDO.getId();
+
+                // 给该用户分配一个默认角色
+                UserRoleDO userRoleDO = UserRoleDO.builder()
+                        .userId(userId)
+                        .roleId(RoleConstants.COMMON_USER_ROLE_ID)
+                        .createTime(LocalDateTime.now())
+                        .updateTime(LocalDateTime.now())
+                        .isDeleted(DeletedEnum.NO.getValue())
+                        .build();
+                userRoleDOMapper.insert(userRoleDO);
+
+                // 将该用户的角色 ID 存入 Redis 中
+                List<Long> roles = Lists.newArrayList();
+                roles.add(RoleConstants.COMMON_USER_ROLE_ID);
+                String userRolesKey = RedisKeyConstants.buildUserRoleKey(phone);
+                redisTemplate.opsForValue().set(userRolesKey, JsonUtils.toJsonString(roles));
+
+                return userId;
+            } catch (Exception e) {
+                status.setRollbackOnly(); // 标记事务为回滚
+                log.error("==> 系统注册用户异常: ", e);
+                return null;
+            }
+        });
     }
 
 }

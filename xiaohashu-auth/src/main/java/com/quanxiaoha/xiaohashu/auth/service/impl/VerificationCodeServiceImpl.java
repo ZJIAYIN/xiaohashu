@@ -39,7 +39,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
         String code = RandomUtil.randomNumbers(6);
 
         //判断key值是否存在
-        Boolean flag = redisTemplate.opsForValue().setIfAbsent(key,code,3*60, TimeUnit.MINUTES);
+        Boolean flag = redisTemplate.opsForValue().setIfAbsent(key,code,3*60, TimeUnit.SECONDS);
 
         //已存在 提示用户请求验证过于频繁
         if(BooleanUtil.isFalse(flag)){
