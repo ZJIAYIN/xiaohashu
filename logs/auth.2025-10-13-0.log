@@ -250,3 +250,92 @@ java.nio.channels.ClosedChannelException: null
 2025-10-13 17:53:48.796 [http-nio-8080-exec-1] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.quanxiaoha.xiaohashu.auth.controller.TestController
 2025-10-13 18:00:35.742 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-10-13 18:00:35.742 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-10-13 21:31:10.945 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 47452 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 21:31:10.947 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 21:31:11.599 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 21:31:11.602 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 21:31:11.631 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2025-10-13 21:31:12.669 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 21:31:12.679 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 21:31:12.679 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 21:31:12.770 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 21:31:12.771 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1784 ms
+2025-10-13 21:31:13.127 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-10-13 21:31:13.392 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-10-13 21:31:14.102 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 21:31:14.112 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 3.956 seconds (process running for 4.6)
+2025-10-13 21:35:30.491 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 21:35:30.493 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 21:35:30.496 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-10-13 21:35:30.844 [http-nio-8080-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送短信验证码], 入参: {"phone":"18566441096"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2025-10-13 21:35:31.859 [http-nio-8080-exec-2] INFO  c.q.x.a.service.impl.VerificationCodeServiceImpl - ==> 手机号: 18566441096, 已发送验证码：【413949】
+2025-10-13 21:35:31.862 [http-nio-8080-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送短信验证码], 耗时: 1037ms, 出参: {"success":true,"message":null,"errorCode":null,"data":null} =================================== 
+2025-10-13 21:37:05.021 [http-nio-8080-exec-5] ERROR c.q.x.auth.exception.GlobalExceptionHandler - /user/login request error, 
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:126)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:504)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1274)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-13 21:37:43.958 [http-nio-8080-exec-6] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录/注册], 入参: {"phone":"18566441096","code":"413949","password":null,"type":1}, 请求类: UserController, 请求方法: login =================================== 
+2025-10-13 21:37:44.027 [http-nio-8080-exec-6] DEBUG c.q.x.a.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?;
+2025-10-13 21:37:44.355 [http-nio-8080-exec-6] DEBUG c.q.x.a.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 18566441096(String)
+2025-10-13 21:37:44.396 [http-nio-8080-exec-6] DEBUG c.q.x.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 0
+2025-10-13 21:37:44.400 [http-nio-8080-exec-6] INFO  c.q.xiaohashu.auth.service.impl.UserServiceImpl - ==> 用户是否注册, phone: 18566441096, userDO: null
+2025-10-13 21:37:44.408 [http-nio-8080-exec-6] DEBUG c.q.x.auth.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, xiaohashu_id, `password`, nickname, avatar, birthday, background_img, phone, sex, `status`, introduction, create_time, update_time, is_deleted) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-13 21:37:44.637 [http-nio-8080-exec-6] DEBUG c.q.x.auth.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 10002(String), null, 小红薯10002(String), null, null, null, 18566441096(String), null, 0(Integer), null, 2025-10-13T21:37:44.407896100(LocalDateTime), 2025-10-13T21:37:44.407896100(LocalDateTime), false(Boolean)
+2025-10-13 21:37:44.663 [http-nio-8080-exec-6] DEBUG c.q.x.auth.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2025-10-13 21:37:44.670 [http-nio-8080-exec-6] DEBUG c.q.x.auth.domain.mapper.UserRoleDOMapper.insert - ==>  Preparing: insert into t_user_role_rel (id, user_id, role_id, create_time, update_time, is_deleted ) values (?, ?, ?, ?, ?, ? )
+2025-10-13 21:37:44.675 [http-nio-8080-exec-6] DEBUG c.q.x.auth.domain.mapper.UserRoleDOMapper.insert - ==> Parameters: null, 1(Long), 1(Long), 2025-10-13T21:37:44.670662800(LocalDateTime), 2025-10-13T21:37:44.670662800(LocalDateTime), false(Boolean)
+2025-10-13 21:37:44.679 [http-nio-8080-exec-6] DEBUG c.q.x.auth.domain.mapper.UserRoleDOMapper.insert - <==    Updates: 1
+2025-10-13 21:37:44.843 [http-nio-8080-exec-6] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录/注册], 耗时: 888ms, 出参: {"success":true,"message":null,"errorCode":null,"data":"4973c93a-e591-424f-97ef-c1b3109c823d"} =================================== 
+2025-10-13 21:40:53.466 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-10-13 21:40:53.475 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
