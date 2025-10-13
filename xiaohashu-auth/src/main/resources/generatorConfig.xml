@@ -45,7 +45,7 @@
                              targetProject="src/main/java"/>
 
         <!-- 需要生成的表-实体类 -->
-        <table tableName="t_user" domainObjectName="UserDO"
+        <table tableName="t_user_role_rel" domainObjectName="UserRoleDO"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"

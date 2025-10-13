@@ -1,7 +1,9 @@
 package com.quanxiaoha.xiaohashu.auth.domain.mapper;
 
 import com.quanxiaoha.xiaohashu.auth.domain.dataobject.UserDO;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UserDOMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface UserDOMapper {
     int updateByPrimaryKeySelective(UserDO record);
 
     int updateByPrimaryKey(UserDO record);
+
+    UserDO selectByPhone(String phone);
 }
