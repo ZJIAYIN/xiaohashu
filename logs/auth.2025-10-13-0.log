@@ -1,0 +1,250 @@
+2025-10-13 14:36:47.958 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 18764 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 14:36:47.960 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 14:36:48.652 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 14:36:48.656 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 14:36:48.690 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2025-10-13 14:36:49.474 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 14:36:49.483 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 14:36:49.484 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 14:36:49.578 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 14:36:49.578 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1573 ms
+2025-10-13 14:36:50.573 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 14:36:50.580 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 3.204 seconds (process running for 3.844)
+2025-10-13 14:37:26.926 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 14:37:26.927 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 14:37:26.931 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-10-13 14:37:27.209 [http-nio-8080-exec-1] WARN  c.q.x.auth.exception.GlobalExceptionHandler - /verification/code/send request error, errorCode: AUTH-10001, errorMessage: phone 手机号格式不正确, 需为 11 位数字, 当前值: '1856644109'; 
+2025-10-13 14:38:26.536 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2025-10-13 15:18:08.989 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 41120 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 15:18:08.991 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 15:18:09.667 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 15:18:09.671 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 15:18:09.699 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-10-13 15:18:10.470 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 15:18:10.480 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 15:18:10.480 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 15:18:10.567 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 15:18:10.567 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1527 ms
+2025-10-13 15:18:11.618 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 15:18:11.626 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 3.181 seconds (process running for 3.8)
+2025-10-13 15:18:53.401 [http-nio-8080-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 15:18:53.401 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 15:18:53.402 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-10-13 15:18:53.467 [http-nio-8080-exec-3] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.quanxiaoha.xiaohashu.auth.controller.TestController
+2025-10-13 15:19:57.287 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2025-10-13 15:21:53.550 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 6184 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 15:21:53.553 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 15:21:54.151 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 15:21:54.153 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 15:21:54.178 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-10-13 15:21:54.783 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 15:21:54.791 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 15:21:54.792 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 15:21:54.872 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 15:21:54.873 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1275 ms
+2025-10-13 15:21:55.820 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 15:21:55.828 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 2.753 seconds (process running for 3.204)
+2025-10-13 15:22:07.348 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 15:22:07.348 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 15:22:07.349 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-13 15:22:07.387 [http-nio-8080-exec-2] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.quanxiaoha.xiaohashu.auth.controller.TestController
+2025-10-13 15:22:36.207 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2025-10-13 15:22:39.002 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 53588 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 15:22:39.004 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 15:22:39.539 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 15:22:39.541 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 15:22:39.565 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-10-13 15:22:40.153 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 15:22:40.162 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 15:22:40.162 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 15:22:40.242 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 15:22:40.242 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1201 ms
+2025-10-13 15:22:41.071 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 15:22:41.079 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 2.478 seconds (process running for 2.944)
+2025-10-13 15:22:55.513 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 15:22:55.514 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 15:22:55.514 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-10-13 15:22:59.882 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2025-10-13 15:27:10.084 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 27444 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 15:27:10.085 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 15:27:10.650 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 15:27:10.653 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 15:27:10.681 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2025-10-13 15:27:11.365 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 15:27:11.374 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 15:27:11.375 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 15:27:11.454 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 15:27:11.454 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1334 ms
+2025-10-13 15:27:12.344 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 15:27:12.351 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 2.672 seconds (process running for 3.212)
+2025-10-13 15:27:56.180 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 15:27:56.181 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 15:27:56.183 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-13 15:27:56.387 [http-nio-8080-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送短信验证码], 入参: {"phone":"18566441096"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2025-10-13 15:27:56.946 [http-nio-8080-exec-2] INFO  c.q.x.a.service.impl.VerificationCodeServiceImpl - ==> 手机号: 18566441096, 已发送验证码：【586036】
+2025-10-13 15:27:56.948 [http-nio-8080-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送短信验证码], 耗时: 570ms, 出参: {"success":true,"message":null,"errorCode":null,"data":null} =================================== 
+2025-10-13 15:35:52.195 [lettuce-nioEventLoop-4-1] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-13 15:35:52.297 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /192.168.64.129:6379
+2025-10-13 15:35:57.378 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:35:57.427 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:36:10.131 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: Software caused connection abort: no further information: /192.168.64.129:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Software caused connection abort: no further information: /192.168.64.129:6379
+Caused by: java.net.SocketException: Software caused connection abort: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-13 15:36:10.235 [lettuce-eventExecutorLoop-1-6] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:36:10.417 [lettuce-nioEventLoop-4-4] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:16.354 [lettuce-nioEventLoop-4-4] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-13 15:46:16.449 [lettuce-eventExecutorLoop-1-7] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /192.168.64.129:6379
+2025-10-13 15:46:21.460 [lettuce-nioEventLoop-4-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:21.539 [lettuce-eventExecutorLoop-1-9] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:26.659 [lettuce-nioEventLoop-4-6] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:26.732 [lettuce-eventExecutorLoop-1-11] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:31.780 [lettuce-nioEventLoop-4-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:31.827 [lettuce-eventExecutorLoop-1-13] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:36.845 [lettuce-nioEventLoop-4-8] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:36.926 [lettuce-eventExecutorLoop-1-15] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:41.941 [lettuce-nioEventLoop-4-9] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:42.027 [lettuce-eventExecutorLoop-1-17] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:47.034 [lettuce-nioEventLoop-4-10] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:47.128 [lettuce-eventExecutorLoop-1-19] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:52.138 [lettuce-nioEventLoop-4-11] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:52.326 [lettuce-eventExecutorLoop-1-1] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:46:57.339 [lettuce-nioEventLoop-4-12] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:46:57.625 [lettuce-eventExecutorLoop-1-3] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:47:02.634 [lettuce-nioEventLoop-4-13] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:47:03.226 [lettuce-eventExecutorLoop-1-5] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:47:08.246 [lettuce-nioEventLoop-4-14] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:47:09.332 [lettuce-eventExecutorLoop-1-7] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:47:14.343 [lettuce-nioEventLoop-4-15] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:47:16.425 [lettuce-eventExecutorLoop-1-9] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:47:21.442 [lettuce-nioEventLoop-4-16] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:47:25.636 [lettuce-eventExecutorLoop-1-11] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:47:30.655 [lettuce-nioEventLoop-4-17] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:47:38.929 [lettuce-eventExecutorLoop-1-13] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:47:43.943 [lettuce-nioEventLoop-4-18] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:48:00.434 [lettuce-eventExecutorLoop-1-15] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:48:05.454 [lettuce-nioEventLoop-4-19] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:48:35.532 [lettuce-eventExecutorLoop-1-17] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:48:40.554 [lettuce-nioEventLoop-4-20] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:49:10.727 [lettuce-eventExecutorLoop-1-19] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:49:16.030 [lettuce-nioEventLoop-4-1] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: java.nio.channels.ClosedChannelException
+java.nio.channels.ClosedChannelException: null
+	at io.netty.channel.nio.AbstractNioChannel.doClose(AbstractNioChannel.java:502)
+	at io.netty.channel.socket.nio.NioSocketChannel.doClose(NioSocketChannel.java:349)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.doClose0(AbstractChannel.java:754)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:731)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:620)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.close(DefaultChannelPipeline.java:1352)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeClose(AbstractChannelHandlerContext.java:749)
+	at io.netty.channel.AbstractChannelHandlerContext.access$1200(AbstractChannelHandlerContext.java:61)
+	at io.netty.channel.AbstractChannelHandlerContext$11.run(AbstractChannelHandlerContext.java:732)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-13 15:49:46.141 [lettuce-eventExecutorLoop-1-1] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:49:51.157 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:50:21.237 [lettuce-eventExecutorLoop-1-3] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:50:26.246 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:50:56.329 [lettuce-eventExecutorLoop-1-5] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:51:01.334 [lettuce-nioEventLoop-4-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [192.168.64.129/<unresolved>:6379]: connection timed out: /192.168.64.129:6379
+2025-10-13 15:51:31.432 [lettuce-eventExecutorLoop-1-7] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 192.168.64.129/<unresolved>:6379
+2025-10-13 15:51:31.440 [lettuce-nioEventLoop-4-5] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 192.168.64.129/<unresolved>:6379
+2025-10-13 15:58:39.781 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2025-10-13 16:00:31.350 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 7972 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 16:00:31.353 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 16:00:32.132 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 16:00:32.136 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 16:00:32.172 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2025-10-13 16:00:33.014 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 16:00:33.033 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 16:00:33.034 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 16:00:33.178 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 16:00:33.179 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1776 ms
+2025-10-13 16:00:34.345 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 16:00:34.353 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 3.589 seconds (process running for 4.359)
+2025-10-13 16:01:36.723 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 16:01:36.725 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 16:01:36.729 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-10-13 16:01:36.815 [http-nio-8080-exec-1] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.quanxiaoha.xiaohashu.auth.controller.TestController
+2025-10-13 16:37:16.113 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2025-10-13 17:51:25.628 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 42172 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 17:51:25.630 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 17:51:26.371 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 17:51:26.375 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 17:51:26.406 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-10-13 17:51:27.200 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 17:51:27.212 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 17:51:27.213 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 17:51:27.327 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 17:51:27.329 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1652 ms
+2025-10-13 17:51:28.077 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-10-13 17:51:28.441 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-10-13 17:51:28.806 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 17:51:28.813 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 3.798 seconds (process running for 4.51)
+2025-10-13 17:51:44.748 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-10-13 17:51:44.757 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-10-13 17:53:33.134 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Starting XiaohashuAuthApplication using Java 17.0.8 with PID 2108 (D:\javacode\xiaohashu\xiaohashu-auth\target\classes started by lenovo in D:\javacode\xiaohashu)
+2025-10-13 17:53:33.137 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - The following 1 profile is active: "dev"
+2025-10-13 17:53:33.771 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-13 17:53:33.773 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-13 17:53:33.798 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2025-10-13 17:53:34.507 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-13 17:53:34.516 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-13 17:53:34.517 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-10-13 17:53:34.606 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-13 17:53:34.606 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1423 ms
+2025-10-13 17:53:35.306 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-10-13 17:53:35.569 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-10-13 17:53:35.914 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-13 17:53:35.914 [main] INFO  c.q.xiaohashu.auth.XiaohashuAuthApplication - Started XiaohashuAuthApplication in 3.361 seconds (process running for 3.989)
+2025-10-13 17:53:48.742 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-13 17:53:48.742 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-13 17:53:48.744 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-13 17:53:48.796 [http-nio-8080-exec-1] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.quanxiaoha.xiaohashu.auth.controller.TestController
