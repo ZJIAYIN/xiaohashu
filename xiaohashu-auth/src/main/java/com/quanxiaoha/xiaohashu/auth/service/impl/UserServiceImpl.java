@@ -3,6 +3,7 @@ package com.quanxiaoha.xiaohashu.auth.service.impl;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.BooleanUtil;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.quanxiaoha.framework.common.eumns.DeletedEnum;
 import com.quanxiaoha.framework.common.eumns.StatusEnum;
@@ -75,10 +76,13 @@ public class UserServiceImpl implements UserService {
             //手机号登录
             case VERIFICATION_CODE:
 
+//                // 校验入参验证码是否为空
+//                if (StringUtils.isBlank(code)) {
+//                    return Response.fail(ResponseCodeEnum.PARAM_NOT_VALID.getErrorCode(), "验证码不能为空");
+//                }
+
                 // 校验入参验证码是否为空
-                if (StringUtils.isBlank(code)) {
-                    return Response.fail(ResponseCodeEnum.PARAM_NOT_VALID.getErrorCode(), "验证码不能为空");
-                }
+                Preconditions.checkArgument(StringUtils.isNotBlank(code), "验证码不能为空");
 
             //判断验证码是否正确
             String key = RedisKeyConstants.buildVerificationCodeKey(phone);
