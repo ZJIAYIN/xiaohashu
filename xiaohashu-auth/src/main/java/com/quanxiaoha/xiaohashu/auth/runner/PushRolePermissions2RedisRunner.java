@@ -21,6 +21,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -80,31 +81,35 @@ public class PushRolePermissions2RedisRunner implements ApplicationRunner {
                         Collectors.toMap(PermissionDO::getId, permissionDO -> permissionDO)
                 );
 
-                // 组织 角色ID-权限 关系
-                Map<Long, List<PermissionDO>> roleIdPermissionDOMap = Maps.newHashMap();
+                //组织 角色名 - 权限名 关系
+                Map<String,List<String>> roleKeyPermissionsMap = Maps.newHashMap();
+
 
                 // 循环所有角色
                 roleDOS.forEach(roleDO -> {
                     // 当前角色 ID
                     Long roleId = roleDO.getId();
+
+                    String roleKey = roleDO.getRoleKey();
+
                     // 当前角色 ID 对应的权限 ID 集合
                     List<Long> permissionIds = roleIdPermissionIdsMap.get(roleId);
                     if (CollUtil.isNotEmpty(permissionIds)) {
-                        List<PermissionDO> perDOS = Lists.newArrayList();
+                        List<String> permissionKeys = Lists.newArrayList();
                         permissionIds.forEach(permissionId -> {
                             // 根据权限 ID 获取具体的权限 DO 对象
                             PermissionDO permissionDO = permissionIdDOMap.get(permissionId);
                             if (Objects.nonNull(permissionDO)) {
-                                perDOS.add(permissionDO);
+                                permissionKeys.add(permissionDO.getPermissionKey());
                             }
                         });
-                        roleIdPermissionDOMap.put(roleId, perDOS);
+                        roleKeyPermissionsMap.put(roleKey, permissionKeys);
                     }
                 });
 
                 // 同步至 Redis 中，方便后续网关查询鉴权使用
-                roleIdPermissionDOMap.forEach((roleId, permissions) -> {
-                    String key = RedisKeyConstants.buildRolePermissionsKey(roleId);
+                roleKeyPermissionsMap.forEach((roleKey, permissions) -> {
+                    String key = RedisKeyConstants.buildRolePermissionsKey(roleKey);
                     redisTemplate.opsForValue().set(key, JsonUtils.toJsonString(permissions));
                 });
             }

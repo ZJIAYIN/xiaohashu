@@ -23,6 +23,7 @@
     <module>xiaohashu-auth</module>
     <module>xiaoha-framework</module>
     <module>xiaohashu-gateway</module>
+
   </modules>
 
 
@@ -123,6 +124,13 @@
       <dependency>
         <groupId>com.quanxiaoha</groupId>
         <artifactId>xiaoha-spring-boot-starter-biz-operationlog</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <!--  Jackson 组件  -->
+      <dependency>
+        <groupId>com.quanxiaoha</groupId>
+        <artifactId>xiaoha-spring-boot-starter-jackson</artifactId>
         <version>${revision}</version>
       </dependency>
 

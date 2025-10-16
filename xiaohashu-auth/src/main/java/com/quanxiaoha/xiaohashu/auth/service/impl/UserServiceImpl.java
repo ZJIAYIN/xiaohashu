@@ -12,8 +12,10 @@ import com.quanxiaoha.framework.common.response.Response;
 import com.quanxiaoha.framework.common.util.JsonUtils;
 import com.quanxiaoha.xiaohashu.auth.constant.RedisKeyConstants;
 import com.quanxiaoha.xiaohashu.auth.constant.RoleConstants;
+import com.quanxiaoha.xiaohashu.auth.domain.dataobject.RoleDO;
 import com.quanxiaoha.xiaohashu.auth.domain.dataobject.UserDO;
 import com.quanxiaoha.xiaohashu.auth.domain.dataobject.UserRoleDO;
+import com.quanxiaoha.xiaohashu.auth.domain.mapper.RoleDOMapper;
 import com.quanxiaoha.xiaohashu.auth.domain.mapper.UserDOMapper;
 import com.quanxiaoha.xiaohashu.auth.domain.mapper.UserRoleDOMapper;
 import com.quanxiaoha.xiaohashu.auth.enums.LoginTypeEnum;
@@ -45,6 +47,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRoleDOMapper userRoleDOMapper;
+
+    @Autowired
+    private RoleDOMapper roleDOMapper;
 
     @Resource
     private RedisTemplate redisTemplate;
@@ -222,9 +227,12 @@ public class UserServiceImpl implements UserService {
                 userRoleDOMapper.insert(userRoleDO);
 
                 // 将该用户的角色 ID 存入 Redis 中
-                List<Long> roles = Lists.newArrayList();
-                roles.add(RoleConstants.COMMON_USER_ROLE_ID);
-                String userRolesKey = RedisKeyConstants.buildUserRoleKey(phone);
+                RoleDO roleDO = roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ROLE_ID);
+                List<String> roles = Lists.newArrayList();
+
+                roles.add(roleDO.getRoleKey());
+
+                String userRolesKey = RedisKeyConstants.buildUserRoleKey(userId);
                 redisTemplate.opsForValue().set(userRolesKey, JsonUtils.toJsonString(roles));
 
                 return userId;
