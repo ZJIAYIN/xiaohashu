@@ -20,6 +20,7 @@ import com.quanxiaoha.xiaohashu.auth.domain.mapper.UserDOMapper;
 import com.quanxiaoha.xiaohashu.auth.domain.mapper.UserRoleDOMapper;
 import com.quanxiaoha.xiaohashu.auth.enums.LoginTypeEnum;
 import com.quanxiaoha.xiaohashu.auth.enums.ResponseCodeEnum;
+import com.quanxiaoha.xiaohashu.auth.filter.LoginUserContextHolder;
 import com.quanxiaoha.xiaohashu.auth.model.vo.user.UserLoginReqVO;
 import com.quanxiaoha.xiaohashu.auth.service.UserService;
 import io.micrometer.common.util.StringUtils;
@@ -242,6 +243,21 @@ public class UserServiceImpl implements UserService {
                 return null;
             }
         });
+    }
+
+    /**
+     * 退出登录
+     *
+     * @param userId
+     * @return
+     */
+    @Override
+    public Response<?> logout() {
+        // 退出登录 (指定用户 ID)
+        Long userId = LoginUserContextHolder.getUserId();
+        StpUtil.logout(userId);
+
+        return Response.success();
     }
 
 }

@@ -28,11 +28,10 @@ public class UserController {
     @PostMapping("/logout")
     @ApiOperationLog(description = "账号登出")
     @ResponseBody
-    public Response<?> logout(@RequestHeader("userId") String userId) {
+    public Response<?> logout() {
 
         // todo 账号退出登录逻辑待实现
-        log.info("==> 网关透传过来的用户 ID: {}", userId);
-
+        userService.logout();
         return Response.success();
     }
 

@@ -12,4 +12,7 @@ public interface UserService {
      * @return
      */
     Response<String> loginAndRegister(UserLoginReqVO userLoginReqVO);
+
+    Response<?> logout();
+
 }
