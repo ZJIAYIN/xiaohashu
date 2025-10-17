@@ -2,6 +2,7 @@ package com.quanxiaoha.xiaohashu.auth.controller;
 
 import com.quanxiaoha.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.quanxiaoha.framework.common.response.Response;
+import com.quanxiaoha.xiaohashu.auth.model.vo.user.UpdatePasswordReqVO;
 import com.quanxiaoha.xiaohashu.auth.model.vo.user.UserLoginReqVO;
 import com.quanxiaoha.xiaohashu.auth.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -34,5 +35,16 @@ public class UserController {
         userService.logout();
         return Response.success();
     }
+
+    @PostMapping("/password/update")
+    @ApiOperationLog(description = "修改密码")
+    @ResponseBody
+    public Response<?> updatePassword(@Validated @RequestBody UpdatePasswordReqVO updatePasswordReqVO) {
+
+        userService.updatePassword(updatePasswordReqVO);
+        return Response.success();
+    }
+
+
 
 }

@@ -5,6 +5,7 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.BooleanUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
+import com.quanxiaoha.framework.biz.context.holder.LoginUserContextHolder;
 import com.quanxiaoha.framework.common.eumns.DeletedEnum;
 import com.quanxiaoha.framework.common.eumns.StatusEnum;
 import com.quanxiaoha.framework.common.exception.BizException;
@@ -20,7 +21,7 @@ import com.quanxiaoha.xiaohashu.auth.domain.mapper.UserDOMapper;
 import com.quanxiaoha.xiaohashu.auth.domain.mapper.UserRoleDOMapper;
 import com.quanxiaoha.xiaohashu.auth.enums.LoginTypeEnum;
 import com.quanxiaoha.xiaohashu.auth.enums.ResponseCodeEnum;
-import com.quanxiaoha.xiaohashu.auth.filter.LoginUserContextHolder;
+import com.quanxiaoha.xiaohashu.auth.model.vo.user.UpdatePasswordReqVO;
 import com.quanxiaoha.xiaohashu.auth.model.vo.user.UserLoginReqVO;
 import com.quanxiaoha.xiaohashu.auth.service.UserService;
 import io.micrometer.common.util.StringUtils;
@@ -28,6 +29,7 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -57,6 +59,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private TransactionTemplate transactionTemplate;
+
+    @Resource
+    private PasswordEncoder passwordEncoder;
 
     /**
      * 登录与注册
@@ -258,6 +263,28 @@ public class UserServiceImpl implements UserService {
         StpUtil.logout(userId);
 
         return Response.success();
+    }
+
+    @Override
+    public Response<?> updatePassword(UpdatePasswordReqVO updatePasswordReqVO) {
+
+        String newPassword = updatePasswordReqVO.getNewPassword();
+
+        //加密
+        String encodedPassword = passwordEncoder.encode(newPassword);
+
+        //存到数据库
+        Long userId = LoginUserContextHolder.getUserId();
+
+        UserDO userDO = UserDO.builder().id(userId).password(encodedPassword).
+                updateTime(LocalDateTime.now())
+                .build();
+
+
+        userDOMapper.updateByPrimaryKeySelective(userDO);
+
+        return Response.success();
+
     }
 
 }
