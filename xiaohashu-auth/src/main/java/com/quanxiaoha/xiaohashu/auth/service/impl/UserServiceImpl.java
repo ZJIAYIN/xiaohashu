@@ -27,6 +27,7 @@ import com.quanxiaoha.xiaohashu.auth.service.UserService;
 import io.micrometer.common.util.StringUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -36,9 +37,10 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 import static com.quanxiaoha.xiaohashu.auth.enums.LoginTypeEnum.VERIFICATION_CODE;
-import static com.quanxiaoha.xiaohashu.auth.enums.ResponseCodeEnum.VERIFICATION_CODE_ERROR;
+import static com.quanxiaoha.xiaohashu.auth.enums.ResponseCodeEnum.*;
 
 
 @Service
@@ -79,6 +81,7 @@ public class UserServiceImpl implements UserService {
         String phone = userLoginReqVO.getPhone();
         //获取验证码
         String code = userLoginReqVO.getCode();
+
 
         Long userId = null;
 
@@ -134,6 +137,29 @@ public class UserServiceImpl implements UserService {
 
             case PASSWORD:
             //ZJY TODO 2025/10/13:密码登录
+
+                //获取密码
+                String password = userLoginReqVO.getPassword();
+
+                //判断用户是否存在
+                UserDO userDO1 = userDOMapper.selectByPhone(phone);
+
+                if(Objects.isNull(userDO1)){
+                    //用户不存在
+                    return Response.fail(USER_NOT_FOUND);
+                };
+
+                //手机号或密码错误
+                String encodePassword = userDO1.getPassword();
+
+                //匹配密码是否一致
+                boolean matches = passwordEncoder.matches(password, encodePassword);
+
+                if(!matches){
+                    return Response.fail(PHONE_OR_PASSWORD_ERROR);
+                };
+
+                userId = userDO1.getId();
 
                 break;
 
